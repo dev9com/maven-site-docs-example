@@ -4,33 +4,79 @@
 
 	<groupId>com.dynacrongroup</groupId>
 	<artifactId>maven-site-docs-example</artifactId>
+
+	<!-- Please use standard version numbering! http://mojo.codehaus.org/versions-maven-plugin/version-rules.html -->
 	<version>1.0-SNAPSHOT</version>
-	<packaging>jar</packaging>
 
 	<name>maven-site-docs-example</name>
+	<description>Demonstrates the use of various Maven site documentation systems.</description>
 
+	<!-- Required by the site command for certain relative URL configuration. -->
 	<url>http://www.dynacrongroup.com/</url>
+
+	<!-- Used by the javadoc plugin to generate the comments at the bottom. -->
+	<inceptionYear>2013</inceptionYear>
 
 	<scm>
 		<connection>scm:git:https://github.com/dynacron-group/maven-site-docs-example.git</connection>
 		<developerConnection>scm:git:https://github.com/dynacron-group/maven-site-docs-example.git</developerConnection>
 		<url>scm:git:https://github.com/dynacron-group/maven-site-docs-example.git</url>
 	</scm>
+
+	<!-- Used to define a minimum Maven version. Used in conjunction with plugin 
+		management to lock in a more current version of the various plugins. -->
 	<prerequisites>
 		<maven>3.1.0</maven>
 	</prerequisites>
+
+	<!-- Generates the license info for the site report. -->
+	<licenses>
+		<license>
+			<name>The Apache Software License, Version 2.0</name>
+			<url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+			<distribution>repo</distribution>
+			<comments>A business-friendly OSS license</comments>
+		</license>
+	</licenses>
+
 	<properties>
+		<!-- Eliminates the file encoding warning. Of course, all of your files 
+			should probably be UTF-8 nowadays. -->
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<jackson.version>2.2.3</jackson.version>
 	</properties>
 
+	<!-- These section is used by the maven-changes-plugin as well as to generate 
+		links in the report. -->
 	<issueManagement>
 		<system>GitHub</system>
 		<url>https://github.com/dynacron-group/maven-site-docs-example/issues/</url>
 	</issueManagement>
 
+	<organization>
+		<name>Dynacron Group</name>
+		<url>http://www.dynacrongroup.com/</url>
+	</organization>
+
+	<!-- These are used in conjunction with the SCM configuration for the change 
+		log reports. -->
+	<developers>
+		<developer>
+			<id>wiverson</id>
+			<name>Will Iverson</name>
+			<email>wiverson@lambda.home</email>
+		</developer>
+		<developer>
+			<id>will-iverson</id>
+			<name>William Iverson</name>
+			<email>will.iverson@dynacrongroup.com</email>
+		</developer>
+	</developers>
+
 
 	<build>
+		<!-- Used to bump all of the various core plugins up to Maven current. 
+			Use this in conjunction with the versions-maven-plugin to keep your Maven 
+			plugins up to date. -->
 		<pluginManagement>
 			<plugins>
 				<plugin>
@@ -81,6 +127,10 @@
 					<target>1.7</target>
 				</configuration>
 			</plugin>
+
+			<!-- It may be strange to configure this plugin in build, but that's where 
+				the dependency config goes. This configuration adds markdown support to the 
+				report generation. -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-site-plugin</artifactId>
@@ -92,7 +142,6 @@
 					</dependency>
 				</dependencies>
 			</plugin>
-
 		</plugins>
 
 
@@ -107,6 +156,7 @@
 			<version>4.11</version>
 			<scope>test</scope>
 		</dependency>
+		<!-- Excellent assertion library - much better than the JUnit defaults. -->
 		<dependency>
 			<groupId>org.easytesting</groupId>
 			<artifactId>fest-assert-core</artifactId>
@@ -124,11 +174,16 @@
 	</dependencies>
 	<reporting>
 		<plugins>
+
+			<!-- Basic report generation. -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-project-info-reports-plugin</artifactId>
 				<version>2.7</version>
 			</plugin>
+
+			<!-- Dependency version reporting. Relies on standard version numbering 
+				- you should use standard version numbering too! http://mojo.codehaus.org/versions-maven-plugin/version-rules.html -->
 			<plugin>
 				<groupId>org.codehaus.mojo</groupId>
 				<artifactId>versions-maven-plugin</artifactId>
@@ -152,7 +207,7 @@
 				<version>2.2</version>
 			</plugin>
 
-			<!-- Generates a narrative list of changes from the -->
+			<!-- Generates a narrative list of changes from the issue management system. -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-changes-plugin</artifactId>
@@ -164,6 +219,16 @@
 						</reports>
 					</reportSet>
 				</reportSets>
+			</plugin>
+
+			<!-- Generates the Javadoc for the report. -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<version>2.9.1</version>
+				<configuration>
+					<linksource>true</linksource>
+				</configuration>
 			</plugin>
 
 		</plugins>
