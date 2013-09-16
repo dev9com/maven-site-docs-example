@@ -58,6 +58,7 @@ public class CalculatorTest {
 	public void testDivideByZero() {
 		calculator.divide(2);
 		LOG.info("Divide by zero results in... {}", calculator.value());
+		assertThat(calculator.value()).isEqualTo(0);
 	}
 
 }
