@@ -10,3 +10,7 @@
 .settings
 .classpath
 .project
+
+# IDEA project files
+*.iml
+.idea
