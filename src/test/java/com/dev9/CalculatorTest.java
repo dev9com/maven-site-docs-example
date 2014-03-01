@@ -8,9 +8,9 @@ import org.slf4j.LoggerFactory;
 
 public class CalculatorTest {
 
-	Calculator calculator = new Calculator();
+	private Calculator calculator = new Calculator();
 
-	static final Logger LOG = LoggerFactory.getLogger(CalculatorTest.class);
+	private static final Logger LOG = LoggerFactory.getLogger(CalculatorTest.class);
 
 	// TODO Add some more javadoc here!
 	@Test
