@@ -3,8 +3,11 @@ This is a very simple Java project, intended to illustrate the use of a number o
 
 To use, simply check out and run:
 
-``mvn clean site
+``mvn clean verify site
 ``
+
+If you only run mvn clean site, you will generate most of the reports, but not the code coverage data.  Code coverage
+requires the test suite to run.
 
 ## Requirements
 - [Maven 3.1.0](http://maven.apache.org/)
