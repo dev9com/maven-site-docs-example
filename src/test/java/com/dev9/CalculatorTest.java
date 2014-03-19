@@ -2,6 +2,7 @@ package com.dev9;
 
 import static org.fest.assertions.api.Assertions.assertThat;
 
+import org.fest.util.VisibleForTesting;
 import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -60,5 +61,12 @@ public class CalculatorTest {
 		LOG.info("Divide by zero results in... {}", calculator.value());
 		assertThat(calculator.value()).isEqualTo(0);
 	}
+
+    @Test
+    public void testAbitrary() {
+        assertThat(calculator.arbitrarilyComplexMethod("bar", 0, null, null, null)).isEqualTo(0);
+
+        assertThat(calculator.arbitrarilyComplexMethodPart2("bar", 0, null, null, null)).isEqualTo(0);
+    }
 
 }
