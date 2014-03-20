@@ -6,8 +6,8 @@ To use, simply check out and run:
 ``mvn clean verify site
 ``
 
-If you only run mvn clean site, you will generate most of the reports, but not the code coverage data.  Code coverage
-requires the test suite to run.
+If you only run mvn clean site, you will generate most of the reports, but not the code coverage data.
+Code coverage requires the test suite to run (part of verify).
 
 ## Requirements
 - [Maven 3.1.0](http://maven.apache.org/)
