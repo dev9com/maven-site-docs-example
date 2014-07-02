@@ -46,7 +46,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <!-- Added to show how the dependency/property report will look at properties -->
         <junit.version>4.11</junit.version>
-        <javaLanguage.version>1.7</javaLanguage.version>
+        <javaLanguage.version>1.8</javaLanguage.version>
     </properties>
 
     <!-- These section is used by the maven-changes-plugin as well as to generate
