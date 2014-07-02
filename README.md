@@ -11,5 +11,5 @@ Code coverage requires the test suite to run (part of verify).
 
 ## Requirements
 - [Maven 3.1.0](http://maven.apache.org/)
-- Java 1.7+
+- Java 1.8+
 
