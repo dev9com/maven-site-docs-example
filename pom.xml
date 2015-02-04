@@ -324,13 +324,12 @@
                 <version>2.4</version>
             </plugin>
 
-            <!-- FindBugs code coverage tool -->
-            <!-- As of 3/18, this report fails with JDK 1.8, even when compiled with 1.7 src/target flags -->
-            <!--<plugin>-->
-                <!--<groupId>org.codehaus.mojo</groupId>-->
-                <!--<artifactId>findbugs-maven-plugin</artifactId>-->
-                <!--<version>2.5.3</version>-->
-            <!--</plugin>-->
+             <!--FindBugs code coverage tool-->
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>findbugs-maven-plugin</artifactId>
+                <version>3.0.0</version>
+            </plugin>
 
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
