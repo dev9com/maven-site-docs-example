@@ -16,6 +16,9 @@
 	<body>
 		<menu ref="reports" inherit="top" />
 		<menu ref="modules" />
+        <menu name="Mutation Testing">
+            <item href="mutation-testing/index.html" name="Mutation Testing" />
+        </menu>
 		<menu name="Sample Markdown">
 			<item href="overview.html" name="Overview" />
 		</menu>

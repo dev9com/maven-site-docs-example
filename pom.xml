@@ -220,11 +220,37 @@
                 <artifactId>maven-pmd-plugin</artifactId>
                 <version>3.4</version>
             </plugin>
+
+            <!-- Configure mutation testing. -->
+            <plugin>
+                <groupId>org.pitest</groupId>
+                <artifactId>pitest-maven</artifactId>
+                <version>1.1.4</version>
+                <configuration>
+                    <targetClasses>
+                        <param>com.dev9*</param>
+                    </targetClasses>
+                    <targetTests>
+                        <param>com.dev9*</param>
+                    </targetTests>
+                    <reportsDirectory>${build.directory}/site/mutation-testing</reportsDirectory>
+                    <threads>4</threads>
+                    <timestampedReports>false</timestampedReports>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>mutation-testing</id>
+                        <phase>site</phase>
+                        <goals>
+                            <goal>mutationCoverage</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
         </plugins>
-
     </build>
-    <dependencies>
 
+    <dependencies>
         <!-- Testing -->
         <dependency>
             <groupId>junit</groupId>
@@ -246,8 +272,8 @@
             <artifactId>logback-classic</artifactId>
             <version>1.1.2</version>
         </dependency>
-
     </dependencies>
+
     <reporting>
         <plugins>
 
