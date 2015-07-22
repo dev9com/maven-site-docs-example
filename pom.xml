@@ -225,7 +225,7 @@
             <plugin>
                 <groupId>org.pitest</groupId>
                 <artifactId>pitest-maven</artifactId>
-                <version>1.1.4</version>
+                <version>1.1.5</version>
                 <configuration>
                     <targetClasses>
                         <param>com.dev9*</param>
@@ -233,7 +233,7 @@
                     <targetTests>
                         <param>com.dev9*</param>
                     </targetTests>
-                    <reportsDirectory>${build.directory}/site/mutation-testing</reportsDirectory>
+                    <reportsDirectory>${project.build.directory}/site/mutation-testing</reportsDirectory>
                     <threads>4</threads>
                     <timestampedReports>false</timestampedReports>
                 </configuration>
