@@ -97,7 +97,7 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-jar-plugin</artifactId>
-                    <version>2.5</version>
+                    <version>2.6</version>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
@@ -107,12 +107,12 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-assembly-plugin</artifactId>
-                    <version>2.5.3</version>
+                    <version>2.5.5</version>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-release-plugin</artifactId>
-                    <version>2.5.1</version>
+                    <version>2.5.2</version>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
@@ -151,7 +151,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.2</version>
+                <version>3.3</version>
                 <configuration>
                     <source>${javaLanguage.version}</source>
                     <target>${javaLanguage.version}</target>
@@ -161,7 +161,8 @@
             <plugin>
                 <groupId>org.jacoco</groupId>
                 <artifactId>jacoco-maven-plugin</artifactId>
-                <version>0.7.2.201409121644</version>
+                <!-- As of 8/5/2015 updating to 0.7.5.x broke the build -->
+                <version>0.7.4.201502262128</version>
 
                 <executions>
                     <execution>
@@ -218,14 +219,14 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-pmd-plugin</artifactId>
-                <version>3.4</version>
+                <version>3.5</version>
             </plugin>
 
             <!-- Configure mutation testing. -->
             <plugin>
                 <groupId>org.pitest</groupId>
                 <artifactId>pitest-maven</artifactId>
-                <version>1.1.5</version>
+                <version>1.1.6</version>
                 <configuration>
                     <targetClasses>
                         <param>com.dev9*</param>
@@ -350,7 +351,7 @@
                 <version>2.4</version>
             </plugin>
 
-             <!--FindBugs code coverage tool-->
+            <!--FindBugs code coverage tool-->
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>findbugs-maven-plugin</artifactId>
