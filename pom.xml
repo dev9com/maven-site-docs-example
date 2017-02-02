@@ -266,11 +266,13 @@
             <version>${junit.version}</version>
             <scope>test</scope>
         </dependency>
-        <!-- Excellent assertion library - much better than the JUnit defaults. -->
+
+        <!-- Excellent assertion library.  Replaces FEST, which is no longer maintained. -->
+        <!-- http://joel-costigliola.github.io/assertj/ -->
         <dependency>
-            <groupId>org.easytesting</groupId>
-            <artifactId>fest-assert-core</artifactId>
-            <version>2.0M10</version>
+            <groupId>org.assertj</groupId>
+            <artifactId>assertj-core</artifactId>
+            <version>3.6.2</version>
             <scope>test</scope>
         </dependency>
 
@@ -298,7 +300,7 @@
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>versions-maven-plugin</artifactId>
-                <version>2.2</version>
+                <version>2.3</version>
                 <reportSets>
                     <reportSet>
                         <reports>
@@ -337,7 +339,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-javadoc-plugin</artifactId>
-                <version>2.9.1</version>
+                <version>2.10.4</version>
                 <configuration>
                     <linksource>true</linksource>
                 </configuration>
@@ -380,7 +382,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-pmd-plugin</artifactId>
-                <version>3.5</version>
+                <version>3.7</version>
                 <configuration>
                     <targetJdk>1.7</targetJdk>
                     <skipEmptyReport>false</skipEmptyReport>
@@ -390,7 +392,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-report-plugin</artifactId>
-                <version>2.18.1</version>
+                <version>2.19.1</version>
                 <reportSets>
                     <reportSet>
                         <reports>
@@ -403,7 +405,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-checkstyle-plugin</artifactId>
-                <version>2.16</version>
+                <version>2.17</version>
                 <reportSets>
                     <reportSet>
                         <reports>
